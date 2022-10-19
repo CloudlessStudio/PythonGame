@@ -4,13 +4,15 @@ from pygame import *
 
 pygame.init()
 
-window = pygame.display.set_mode((500,500),0,32)
+window = pygame.display.set_mode((500, 500),0,32)
 pygame.display.set_caption("CoolGame")
+
+
 
 FPS = pygame.time.Clock()
 
 while True:
-    window.fill((0,0,255))
+    window.fill((0,255,255))
     for event in pygame.event.get():
             if event.type == QUIT:
                 pygame.quit()
@@ -19,5 +21,6 @@ while True:
                 if event.key == K_ESCAPE:
                     pygame.quit()
                     sys.exit()
+    pygame.draw.rect(window,(255,255,255), (255,255, 30,30))
     pygame.display.update()
     FPS.tick(60)
